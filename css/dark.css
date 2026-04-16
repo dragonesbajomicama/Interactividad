@@ -1,0 +1,87 @@
+* {
+box-sizing: border-box;
+}
+body {
+    transition: all 0.5s ease;
+    padding: 0%;
+    margin: 0%;
+    background-color: #ffae43;
+    color: #15089a;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}
+h1 {
+    text-align: center;
+    margin-top: 20%;
+    position: relative;
+    z-index: 1;
+}
+button {    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #15089a;
+    color: #ffae43;
+    border: 2px solid #ffae43;
+    border-radius: 40px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+.stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 0;
+}
+
+.stars.active {
+    opacity: 1;
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background: #fff8cf;
+    box-shadow: 0 0 8px rgba(255, 248, 207, 0.8);
+    animation-name: twinkle, drift;
+    animation-timing-function: ease-in-out, linear;
+    animation-iteration-count: infinite, infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.25;
+        transform: scale(0.8);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+@keyframes drift {
+    0% {
+        translate: 0 0;
+    }
+    100% {
+        translate: 0 var(--drift, 12px);
+    }
+}
+      
+.dark-mode {
+    background-color: #15089a;
+    color: #ffae43;
+}
+.dark-mode button {
+    background-color: #ffae43;
+    color: #15089a;
+    border: 2px solid #15089a;
+}   
