@@ -1,0 +1,12 @@
+body{
+    padding: 0%;
+    margin: 0%;
+    overflow: hidden
+    transition: background-color 0.5s;
+}
+h1{
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    text-align: left;
+    margin-left: 20px;
+}
